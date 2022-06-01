@@ -91,7 +91,7 @@ def bfgs(pred_str, X, y, cfg):
     print('Constructing BFGS loss...')
 
     if cfg.bfgs.idx_remove:
-        print('Flag idx remove ON, Removing indeces with high values...')
+        print('Flag idx remove ON, Removing indices with high values...')
         bool_con = (X<200).all(axis=2).squeeze() 
         X = X[:,bool_con,:]
         # idx_leave = np.where((np.abs(input_batch[:,3].numpy()))<200)[0]

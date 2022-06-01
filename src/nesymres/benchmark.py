@@ -189,7 +189,7 @@ def evaluate_func(func_str, vars_list, X):
     assert len(set(vars_list)) == len(vars_list), 'Duplicates in vars_list!'
 
     order_list = vars_list
-    indeces = [int(x[2:])-1 for x in order_list]
+    indices = [int(x[2:])-1 for x in order_list]
 
     if not order_list:
         # Empty order list. Constant function predicted
@@ -203,7 +203,7 @@ def evaluate_func(func_str, vars_list, X):
     
     X_padded[:, :X.shape[1]] = X[:,:X_padded.shape[1]]
     # Subselect columns of X that corrspond to provided variables
-    X_subsel = X_padded[:, indeces]
+    X_subsel = X_padded[:, indices]
 
     # The positional arguments of the resulting function will correspond to
     # the order of variables in "vars_list"
